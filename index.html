@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almanaque da Copa do Mundo</title>
+    <title>Almanaque Definitivo da Copa do Mundo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1>🏆 Almanaque da Copa do Mundo</h1>
+            <h1>⚽ Almanaque da Copa do Mundo</h1>
             <nav>
                 <ul>
                     <li><a href="#historia">História</a></li>
-                    <li><a href="#campeoes">Grandes Campeões</a></li>
-                    <li><a href="#curiosidades">Curiosidades</a></li>
+                    <li><a href="#paises">Estatísticas por País</a></li>
+                    <li><a href="#lendas">Grandes Lendas</a></li>
+                    <li><a href="#recordes">Recordes & Artilharia</a></li>
                 </ul>
             </nav>
         </div>
@@ -23,63 +24,113 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h2>A História do Maior Espetáculo da Terra</h2>
-            <p>Explore os dados, os campeões e os momentos marcantes de todas as edições do mundial da FIFA.</p>
+            <h2>O Guia Definitivo do Mundial da FIFA</h2>
+            <p>Estatísticas completas, recordes históricos e as lendas que moldaram o futebol mundial.</p>
         </div>
     </section>
 
     <section id="historia" class="container section">
-        <h2>História do Torneio</h2>
-        <p>Criada em 1930 por iniciativa de Jules Rimet, a Copa do Mundo da FIFA acontece a cada quatro anos (com exceção de 1942 e 1946 devido à Segunda Guerra Mundial). O torneio reúne as melhores seleções do planeta em busca da glória eterna.</p>
+        <h2>A Origem do Maior Espetáculo da Terra</h2>
+        <p>Idealizada pelo francês Jules Rimet na década de 1920, a primeira Copa do Mundo foi realizada no Uruguai, em 1930, contando com apenas 13 seleções convidadas. Desde então, o torneio expandiu-se de forma extraordinária, tornando-se o evento esportivo mais assistido do planeta. Disputado de 4 em 4 anos, teve suas edições de 1942 e 1946 canceladas devido aos conflitos da Segunda Guerra Mundial.</p>
     </section>
 
-    <section id="campeoes" class="container section">
-        <h2>Os Maiores Vencedores</h2>
-        <p>Clique em uma seleção para ver quantas vezes ela levantou a taça:</p>
+    <section id="paises" class="container section">
+        <h2>Histórico Detalhado por País</h2>
+        <p>Clique em uma das potências do futebol para carregar seu retrospecto completo, principais artilheiros e ídolos históricos:</p>
         
-        <div class="grid-campeoes">
-            <div class="card" data-titulos="5 (1958, 1962, 1970, 1994, 2002)">
-                <h3>Brasil 🇧🇷</h3>
-            </div>
-            <div class="card" data-titulos="4 (1934, 1938, 1954, 1990)">
-                <h3>Alemanha 🇩🇪</h3>
-            </div>
-            <div class="card" data-titulos="4 (1934, 1938, 1982, 2006)">
-                <h3>Itália 🇮🇹</h3>
-            </div>
-            <div class="card" data-titulos="3 (1978, 1986, 2022)">
-                <h3>Argentina 🇦🇷</h3>
-            </div>
-            <div class="card" data-titulos="2 (1998, 2018)">
-                <h3>França 🇫🇷</h3>
-            </div>
-            <div class="card" data-titulos="2 (1930, 1950)">
-                <h3>Uruguai 🇺🇾</h3>
-            </div>
+        <div class="grid-paises">
+            <button class="btn-pais" data-pais="brasil">Brasil 🇧🇷</button>
+            <button class="btn-pais" data-pais="alemanha">Alemanha 🇩🇪</button>
+            <button class="btn-pais" data-pais="italia">Itália 🇮🇹</button>
+            <button class="btn-pais" data-pais="argentina">Argentina 🇦🇷</button>
+            <button class="btn-pais" data-pais="franca">França 🇫🇷</button>
         </div>
 
-        <div id="painel-resultado" class="painel hidden">
-            <p id="texto-resultado"></p>
+        <div id="painel-pais" class="painel-detalhes hidden">
+            <h3 id="nome-pais">País</h3>
+            <hr>
+            <p><strong>Títulos:</strong> <span id="titulos-pais"></span></p>
+            <p><strong>Maior Artilheiro em Copas:</strong> <span id="artilheiro-pais"></span></p>
+            <p><strong>Jogador com Mais Partidas:</strong> <span id="principal-jogador-pais"></span></p>
+            <p><strong>Fato Histórico:</strong> <span id="fato-pais"></span></p>
         </div>
     </section>
 
-    <section id="curiosidades" class="container section">
-        <h2>Curiosidades Rápidas</h2>
-        <div class="curiosidades-lista">
-            <div class="item-curiosidade">
-                <strong>Maior Artilheiro:</strong> Miroslav Klose (Alemanha) com 16 gols.
+    <section id="lendas" class="container section">
+        <h2>Grandes Jogadores das Copas</h2>
+        <p>Atletas que imortalizaram seus nomes na história dos mundiais através de atuações lendárias:</p>
+        
+        <div class="cards-lendas">
+            <div class="card-lenda">
+                <h3>Pelé 🇧🇷</h3>
+                <p>O único jogador na história do futebol a conquistar 3 Copas do Mundo (1958, 1962 e 1970). Estreou com apenas 17 anos marcando gols decisivos.</p>
             </div>
-            <div class="item-curiosidade">
-                <strong>O Rei do Futebol:</strong> Pelé é o único jogador a vencer 3 Copas do Mundo (1958, 1962 e 1970).
+            <div class="card-lenda">
+                <h3>Diego Maradona 🇦🇷</h3>
+                <p>Protagonista absoluto da Copa de 1986. Ficou eternizado pelo gol do século contra a Inglaterra e pela famosa "Mão de Deus" no mesmo jogo.</p>
             </div>
-            <div class="item-curiosidade">
-                <strong>Gol mais rápido:</strong> Hakan Sükür (Turquia) aos 11 segundos em 2002.
+            <div class="card-lenda">
+                <h3>Zinedine Zidane 🇫🇷</h3>
+                <p>Decisivo na final de 1998 com dois gols de cabeça contra o Brasil e eleito o melhor jogador do torneio de 2006, onde levou a França à final.</p>
+            </div>
+            <div class="card-lenda">
+                <h3>Lionel Messi 🇦🇷</h3>
+                <p>Teve uma das maiores exibições individuais da era moderna em 2022, liderando a Argentina ao título e quebrando o recorde de mais partidas em Copas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="recordes" class="container section">
+        <h2>Recordes e Estatísticas Históricas</h2>
+        
+        <div class="tabelas-container">
+            <div class="tabela-bloco">
+                <h3>Maiores Artilheiros da História</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Jogador</th>
+                            <th>Seleção</th>
+                            <th>Gols</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1º</td><td>Miroslav Klose</td><td>Alemanha 🇩🇪</td><td>16</td></tr>
+                        <tr><td>2º</td><td>Ronaldo Nazário</td><td>Brasil 🇧🇷</td><td>15</td></tr>
+                        <tr><td>3º</td><td>Gerd Müller</td><td>Alemanha 🇩🇪</td><td>14</td></tr>
+                        <tr><td>4º</td><td>Just Fontaine</td><td>França 🇫🇷</td><td>13</td></tr>
+                        <tr><td>5º</td><td>Lionel Messi</td><td>Argentina 🇦🇷</td><td>13</td></tr>
+                    </tbody>
+                </table>
+                <small>*Just Fontaine detém o recorde de mais gols em uma única edição (13 gols em 1958).</small>
+            </div>
+
+            <div class="tabela-bloco">
+                <h3>Jogadores com Mais Partidas</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Jogador</th>
+                            <th>Seleção</th>
+                            <th>Jogos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1º</td><td>Lionel Messi</td><td>Argentina 🇦🇷</td><td>26</td></tr>
+                        <tr><td>2º</td><td>Lothar Matthäus</td><td>Alemanha 🇩🇪</td><td>25</td></tr>
+                        <tr><td>3º</td><td>Miroslav Klose</td><td>Alemanha 🇩🇪</td><td>24</td></tr>
+                        <tr><td>4º</td><td>Paolo Maldini</td><td>Itália 🇮🇹</td><td>23</td></tr>
+                        <tr><td>5º</td><td>Cristiano Ronaldo</td><td>Portugal 🇵🇹</td><td>22</td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 - Almanaque da Copa do Mundo. Desenvolvido para amantes do futebol.</p>
+        <p>&copy; 2026 - Almanaque da Copa do Mundo. Dados históricos consolidados.</p>
     </footer>
 
     <script src="script.js"></script>

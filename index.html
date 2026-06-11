@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almanaque da Copa do Mundo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>🏆 Almanaque da Copa do Mundo</h1>
+            <nav>
+                <ul>
+                    <li><a href="#historia">História</a></li>
+                    <li><a href="#campeoes">Grandes Campeões</a></li>
+                    <li><a href="#curiosidades">Curiosidades</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>A História do Maior Espetáculo da Terra</h2>
+            <p>Explore os dados, os campeões e os momentos marcantes de todas as edições do mundial da FIFA.</p>
+        </div>
+    </section>
+
+    <section id="historia" class="container section">
+        <h2>História do Torneio</h2>
+        <p>Criada em 1930 por iniciativa de Jules Rimet, a Copa do Mundo da FIFA acontece a cada quatro anos (com exceção de 1942 e 1946 devido à Segunda Guerra Mundial). O torneio reúne as melhores seleções do planeta em busca da glória eterna.</p>
+    </section>
+
+    <section id="campeoes" class="container section">
+        <h2>Os Maiores Vencedores</h2>
+        <p>Clique em uma seleção para ver quantas vezes ela levantou a taça:</p>
+        
+        <div class="grid-campeoes">
+            <div class="card" data-titulos="5 (1958, 1962, 1970, 1994, 2002)">
+                <h3>Brasil 🇧🇷</h3>
+            </div>
+            <div class="card" data-titulos="4 (1934, 1938, 1954, 1990)">
+                <h3>Alemanha 🇩🇪</h3>
+            </div>
+            <div class="card" data-titulos="4 (1934, 1938, 1982, 2006)">
+                <h3>Itália 🇮🇹</h3>
+            </div>
+            <div class="card" data-titulos="3 (1978, 1986, 2022)">
+                <h3>Argentina 🇦🇷</h3>
+            </div>
+            <div class="card" data-titulos="2 (1998, 2018)">
+                <h3>França 🇫🇷</h3>
+            </div>
+            <div class="card" data-titulos="2 (1930, 1950)">
+                <h3>Uruguai 🇺🇾</h3>
+            </div>
+        </div>
+
+        <div id="painel-resultado" class="painel hidden">
+            <p id="texto-resultado"></p>
+        </div>
+    </section>
+
+    <section id="curiosidades" class="container section">
+        <h2>Curiosidades Rápidas</h2>
+        <div class="curiosidades-lista">
+            <div class="item-curiosidade">
+                <strong>Maior Artilheiro:</strong> Miroslav Klose (Alemanha) com 16 gols.
+            </div>
+            <div class="item-curiosidade">
+                <strong>O Rei do Futebol:</strong> Pelé é o único jogador a vencer 3 Copas do Mundo (1958, 1962 e 1970).
+            </div>
+            <div class="item-curiosidade">
+                <strong>Gol mais rápido:</strong> Hakan Sükür (Turquia) aos 11 segundos em 2002.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 - Almanaque da Copa do Mundo. Desenvolvido para amantes do futebol.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

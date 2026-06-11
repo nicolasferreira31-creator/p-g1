@@ -4,7 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Almanaque Definitivo da Copa do Mundo</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS EMBUTIDO PARA GARANTIR O VISUAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --verde-principal: #1b4332;
+            --verde-escuro: #081c15;
+            --dourado: #d4af37;
+            --cinza-claro: #f4f7f6;
+            --branco: #ffffff;
+        }
+
+        body {
+            background-color: var(--cinza-claro);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 50px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h2 {
+            color: var(--verde-principal);
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--dourado);
+            margin-top: 5px;
+        }
+
+        header {
+            background-color: var(--verde-principal);
+            color: var(--branco);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--dourado);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(8, 28, 21, 0.9)), 
+                        url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--branco);
+            padding: 20px;
+        }
+
+        .hero-content h2 {
+            color: var(--dourado);
+            font-size: 2.8rem;
+        }
+
+        .hero-content h2::after { display: none; }
+
+        /* Botões dos Países */
+        .grid-paises {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .btn-pais {
+            background-color: var(--branco);
+            border: 2px solid var(--verde-principal);
+            color: var(--verde-principal);
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pais:hover, .btn-pais.active {
+            background-color: var(--verde-principal);
+            color: var(--branco);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Painel que mostra os dados */
+        .painel-detalhes {
+            background-color: var(--branco);
+            border-left: 6px solid var(--dourado);
+            border-radius: 4px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+
+        .painel-detalhes h3 {
+            font-size: 1.6rem;
+            color: var(--verde-principal);
+            margin-bottom: 10px;
+        }
+
+        .painel-detalhes p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .cards-lendas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card-lenda {
+            background-color: var(--branco);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid var(--verde-principal);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card-lenda h3 {
+            margin-bottom: 10px;
+            color: var(--verde-principal);
+        }
+
+        .tabelas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--branco);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--verde-principal);
+            color: var(--branco);
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            background-color: var(--verde-escuro);
+            color: #aaa;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,7 +225,7 @@
                     <li><a href="#historia">História</a></li>
                     <li><a href="#paises">Estatísticas por País</a></li>
                     <li><a href="#lendas">Grandes Lendas</a></li>
-                    <li><a href="#recordes">Recordes & Artilharia</a></li>
+                    <li><a href="#recordes">Recordes</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,75 +234,63 @@
     <section class="hero">
         <div class="hero-content">
             <h2>O Guia Definitivo do Mundial da FIFA</h2>
-            <p>Estatísticas completas, recordes históricos e as lendas que moldaram o futebol mundial.</p>
+            <p>Estatísticas completas, recordes históricos e as lendas do futebol.</p>
         </div>
     </section>
 
     <section id="historia" class="container section">
         <h2>A Origem do Maior Espetáculo da Terra</h2>
-        <p>Idealizada pelo francês Jules Rimet na década de 1920, a primeira Copa do Mundo foi realizada no Uruguai, em 1930, contando com apenas 13 seleções convidadas. Desde então, o torneio expandiu-se de forma extraordinária, tornando-se o evento esportivo mais assistido do planeta. Disputado de 4 em 4 anos, teve suas edições de 1942 e 1946 canceladas devido aos conflitos da Segunda Guerra Mundial.</p>
+        <p>Idealizada pelo francês Jules Rimet na década de 1920, a primeira Copa do Mundo foi realizada no Uruguai, em 1930. Desde então, o torneio expandiu-se de forma extraordinária, tornando-se o evento esportivo mais assistido do planeta.</p>
     </section>
 
     <section id="paises" class="container section">
         <h2>Histórico Detalhado por País</h2>
-        <p>Clique em uma das potências do futebol para carregar seu retrospecto completo, principais artilheiros e ídolos históricos:</p>
+        <p>Clique em uma das potências do futebol para carregar seu retrospecto completo:</p>
         
         <div class="grid-paises">
-            <button class="btn-pais" data-pais="brasil">Brasil 🇧🇷</button>
-            <button class="btn-pais" data-pais="alemanha">Alemanha 🇩🇪</button>
-            <button class="btn-pais" data-pais="italia">Itália 🇮🇹</button>
-            <button class="btn-pais" data-pais="argentina">Argentina 🇦🇷</button>
-            <button class="btn-pais" data-pais="franca">França 🇫🇷</button>
+            <button class="btn-pais" onclick="mostrarPais('brasil')">Brasil 🇧🇷</button>
+            <button class="btn-pais" onclick="mostrarPais('alemanha')">Alemanha 🇩🇪</button>
+            <button class="btn-pais" onclick="mostrarPais('italia')">Itália 🇮🇹</button>
+            <button class="btn-pais" onclick="mostrarPais('argentina')">Argentina 🇦🇷</button>
+            <button class="btn-pais" onclick="mostrarPais('franca')">França 🇫🇷</button>
         </div>
 
-        <div id="painel-pais" class="painel-detalhes hidden">
-            <h3 id="nome-pais">País</h3>
-            <hr>
-            <p><strong>Títulos:</strong> <span id="titulos-pais"></span></p>
-            <p><strong>Maior Artilheiro em Copas:</strong> <span id="artilheiro-pais"></span></p>
-            <p><strong>Jogador com Mais Partidas:</strong> <span id="principal-jogador-pais"></span></p>
-            <p><strong>Fato Histórico:</strong> <span id="fato-pais"></span></p>
+        <div id="painel-pais" class="painel-detalhes">
+            <h3 id="nome-pais">Brasil 🇧🇷</h3>
+            <hr style="margin: 10px 0; border: 0; border-top: 1px solid #ddd;">
+            <p><strong>Títulos:</strong> <span id="titulos-pais">5 Vezes Campeão (1958, 1962, 1970, 1994, 2002)</span></p>
+            <p><strong>Maior Artilheiro em Copas:</strong> <span id="artilheiro-pais">Ronaldo Nazário (15 gols em 4 Copas)</span></p>
+            <p><strong>Jogador com Mais Partidas:</strong> <span id="principal-jogador-pais">Cafu (20 partidas disputadas e único a jogar 3 finais seguidas)</span></p>
+            <p><strong>Fato Histórico:</strong> <span id="fato-pais">É a única seleção do planeta a participar de absolutamente todas as edições da Copa do Mundo.</span></p>
         </div>
     </section>
 
     <section id="lendas" class="container section">
         <h2>Grandes Jogadores das Copas</h2>
-        <p>Atletas que imortalizaram seus nomes na história dos mundiais através de atuações lendárias:</p>
-        
         <div class="cards-lendas">
             <div class="card-lenda">
                 <h3>Pelé 🇧🇷</h3>
-                <p>O único jogador na história do futebol a conquistar 3 Copas do Mundo (1958, 1962 e 1970). Estreou com apenas 17 anos marcando gols decisivos.</p>
+                <p>O único jogador na história a conquistar 3 Copas do Mundo (1958, 1962 e 1970). Estreou com apenas 17 anos.</p>
             </div>
             <div class="card-lenda">
                 <h3>Diego Maradona 🇦🇷</h3>
-                <p>Protagonista absoluto da Copa de 1986. Ficou eternizado pelo gol do século contra a Inglaterra e pela famosa "Mão de Deus" no mesmo jogo.</p>
-            </div>
-            <div class="card-lenda">
-                <h3>Zinedine Zidane 🇫🇷</h3>
-                <p>Decisivo na final de 1998 com dois gols de cabeça contra o Brasil e eleito o melhor jogador do torneio de 2006, onde levou a França à final.</p>
+                <p>Protagonista absoluto da Copa de 1986. Ficou eternizado pelo "Gol do Século" contra a Inglaterra.</p>
             </div>
             <div class="card-lenda">
                 <h3>Lionel Messi 🇦🇷</h3>
-                <p>Teve uma das maiores exibições individuais da era moderna em 2022, liderando a Argentina ao título e quebrando o recorde de mais partidas em Copas.</p>
+                <p>Liderou a Argentina ao título em 2022 e quebrou o recorde de mais partidas disputadas na história do torneio.</p>
             </div>
         </div>
     </section>
 
     <section id="recordes" class="container section">
         <h2>Recordes e Estatísticas Históricas</h2>
-        
         <div class="tabelas-container">
             <div class="tabela-bloco">
                 <h3>Maiores Artilheiros da História</h3>
                 <table>
                     <thead>
-                        <tr>
-                            <th>Pos.</th>
-                            <th>Jogador</th>
-                            <th>Seleção</th>
-                            <th>Gols</th>
-                        </tr>
+                        <tr><th>Pos.</th><th>Jogador</th><th>Seleção</th><th>Gols</th></tr>
                     </thead>
                     <tbody>
                         <tr><td>1º</td><td>Miroslav Klose</td><td>Alemanha 🇩🇪</td><td>16</td></tr>
@@ -103,26 +300,19 @@
                         <tr><td>5º</td><td>Lionel Messi</td><td>Argentina 🇦🇷</td><td>13</td></tr>
                     </tbody>
                 </table>
-                <small>*Just Fontaine detém o recorde de mais gols em uma única edição (13 gols em 1958).</small>
             </div>
 
             <div class="tabela-bloco">
                 <h3>Jogadores com Mais Partidas</h3>
                 <table>
                     <thead>
-                        <tr>
-                            <th>Pos.</th>
-                            <th>Jogador</th>
-                            <th>Seleção</th>
-                            <th>Jogos</th>
-                        </tr>
+                        <tr><th>Pos.</th><th>Jogador</th><th>Seleção</th><th>Jogos</th></tr>
                     </thead>
                     <tbody>
                         <tr><td>1º</td><td>Lionel Messi</td><td>Argentina 🇦🇷</td><td>26</td></tr>
                         <tr><td>2º</td><td>Lothar Matthäus</td><td>Alemanha 🇩🇪</td><td>25</td></tr>
                         <tr><td>3º</td><td>Miroslav Klose</td><td>Alemanha 🇩🇪</td><td>24</td></tr>
                         <tr><td>4º</td><td>Paolo Maldini</td><td>Itália 🇮🇹</td><td>23</td></tr>
-                        <tr><td>5º</td><td>Cristiano Ronaldo</td><td>Portugal 🇵🇹</td><td>22</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -130,9 +320,58 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 - Almanaque da Copa do Mundo. Dados históricos consolidados.</p>
+        <p>&copy; 2026 - Almanaque da Copa do Mundo. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const dadosPaises = {
+            brasil: {
+                nome: "Brasil 🇧🇷",
+                titulos: "5 Vezes Campeão (1958, 1962, 1970, 1994, 2002)",
+                artilheiro: "Ronaldo Nazário (15 gols)",
+                jogador: "Cafu (20 partidas disputadas e único a jogar 3 finais seguidas)",
+                fato: "É a única seleção do planeta a participar de absolutamente todas as edições da Copa do Mundo."
+            },
+            alemanha: {
+                nome: "Alemanha 🇩🇪",
+                titulos: "4 Vezes Campeã (1954, 1974, 1990, 2014)",
+                artilheiro: "Miroslav Klose (16 gols - O maior artilheiro de todas as Copas)",
+                jogador: "Lothar Matthäus (25 partidas disputadas em 5 Copas diferentes)",
+                fato: "É a seleção que mais disputou finais na história (8 vezes no total)."
+            },
+            italia: {
+                nome: "Itália 🇮🇹",
+                titulos: "4 Vezes Campeã (1934, 1938, 1982, 2006)",
+                artilheiro: "Roberto Baggio, Paolo Rossi e Christian Vieri (9 gols cada)",
+                jogador: "Paolo Maldini (23 partidas disputadas)",
+                fato: "Foi a primeira seleção a conquistar duas Copas seguidas (1934 e 1938)."
+            },
+            argentina: {
+                nome: "Argentina 🇦🇷",
+                titulos: "3 Vezes Campeã (1978, 1986, 2022)",
+                artilheiro: "Lionel Messi (13 gols)",
+                jogador: "Lionel Messi (26 partidas disputadas - Recordista absoluto da Fifa)",
+                fato: "A conquista de 1986 contou com a genialidade de Diego Maradona marcando o Gol do Século."
+            },
+            franca: {
+                nome: "França 🇫🇷",
+                titulos: "2 Vezes Campeã (1998, 2018)",
+                artilheiro: "Just Fontaine (13 gols em uma única edição, em 1958)",
+                jogador: "Hugo Lloris (20 partidas disputadas)",
+                fato: "Chegou a quatro finais nas últimas sete edições do torneio (1998, 2006, 2018 e 2022)."
+            }
+        };
+
+        function mostrarPais(chavePais) {
+            const dados = dadosPaises[chavePais];
+            if (dados) {
+                document.getElementById("nome-pais").innerText = dados.nome;
+                document.getElementById("titulos-pais").innerText = dados.titulos;
+                document.getElementById("artilheiro-pais").innerText = dados.artilheiro;
+                document.getElementById("principal-jogador-pais").innerText = dados.jogador;
+                document.getElementById("fato-pais").innerText = dados.fato;
+            }
+        }
+    </script>
 </body>
 </html>
